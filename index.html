@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB to HEX and reverse</title>
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <style>
+        #inp {
+            width: 200px;
+            padding: 7px;
+            border-radius: 100px;
+            border:0;
+            box-shadow:0 0 15px 4px rgb(14, 14, 14);
+            background-color: #1c1c1c;
+            color: darkgray
+        }
+        .vertical-center {
+            margin: 0;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; background: rgb(31,31,31); color: rgb(241,241,241);" class="vertical-center">
+    <h1>RGB to HEX and Reverse</h1>
+
+    <div id="handler">
+        <p style="color: #646464; margin-bottom: 30px">Enter an RGB value as such: rgb(250, 60, 0) or HEX as: #fa3c00</p>
+        <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" v-model="input" v-on:keyup='match' id="inp" placeholder="RGB or HEX">
+        <!-- <button v-on:click="match">Reverse Message</button> -->
+        <p>{{ message }}</p>
+
+        <div style="width: 100px; height: 75px; margin: 0 auto;" id='color'></div>
+    </div>
+</body>
+
+<script src="regEXP.js"></script>
+</html>
