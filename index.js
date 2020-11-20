@@ -23,20 +23,23 @@ const EventHandling = {
                     this.message = '#' + hexArr.join('')
                 }
 
-                if (/^#/.test(this.input)) {
+                else if (/^#/.test(this.input)) {
                     console.log('hex')
-                    if (String(/\S*$/i.exec(this.input)).length > 7) {
-                        this.message = 'Too long'
+                    if (!/[1-9|a-f]{6}$/.test(this.input)) {
+                        this.message = 'Incorrect input'
+                        document.getElementById('color').style.background = ''
                         return
                     }
-                    if (String(/\S*$/i.exec(this.input)).length < 7) {
-                        this.message = `Too short`
-                        return
-                    }
-                    let str = /\S{6}$/ig.exec(this.input)
+
+                    let str = /[1-9|a-f]{6}$/ig.exec(this.input)
                     let rgbArr = []
                     for (let i = 0; i < 6; i += 2) rgbArr.push(parseInt(str[0][i] + str[0][i + 1], 16))
                     this.message = `rgb(${rgbArr})`
+                }
+
+                else {
+                    this.message = 'Result'
+                    document.getElementById('color').style.background = ''
                 }
                 document.getElementById('color').style.background = this.message
             }
