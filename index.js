@@ -16,11 +16,17 @@ const EventHandling = {
                     // console.log(input.match(/\d+/g))
                     let hexArr = []
                     for (let elem of this.input.match(/\d+/g)) {
+                        if (elem > 255) {
+                            this.message = 'Incorrect input'
+                            return
+                        }
                         elem = Number(elem).toString(16)
                         if (elem.length < 2) elem = '0' + elem
                         hexArr.push(elem)
+                        console.log(elem)
                     }
                     this.message = '#' + hexArr.join('')
+                    if (hexArr.length > 3) this.message = 'Incorrect input'
                 }
 
                 else if (/^#/.test(this.input)) {
@@ -52,4 +58,3 @@ const EventHandling = {
 }
 
 Vue.createApp(EventHandling).mount('#handler')
-
