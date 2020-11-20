@@ -25,7 +25,7 @@ const EventHandling = {
 
                 else if (/^#/.test(this.input)) {
                     console.log('hex')
-                    if (!/[1-9|a-f]{6}$/.test(this.input)) {
+                    if (!/[1-9|a-f]{6}$/.test(this.input) || this.input.length > 7) {
                         this.message = 'Incorrect input'
                         document.getElementById('color').style.background = ''
                         return
