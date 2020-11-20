@@ -1,7 +1,7 @@
 const EventHandling = {
     data() {
         return {
-            message: 'result',
+            message: 'Result',
             input: ''
         }
     },

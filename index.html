@@ -26,11 +26,11 @@
         }
     </style>
 </head>
-<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; background: rgb(31,31,31); color: rgb(241,241,241);" class="vertical-center">
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; background: rgb(24,26,27); color: rgb(241,241,241);" class="vertical-center">
     <h1>RGB to HEX and Reverse</h1>
 
     <div id="handler">
-        <p style="color: #646464; margin-bottom: 30px">Enter an RGB value as such: rgb(250, 60, 0) or HEX as: #fa3c00</p>
+        <p style="color: rgb(169,161,150); margin-bottom: 30px">Enter an RGB value as such: rgb(250, 60, 0) or HEX as: #fa3c00</p>
         <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" v-model="input" v-on:keyup='match' id="inp" placeholder="RGB or HEX">
         <!-- <button v-on:click="match">Reverse Message</button> -->
         <p>{{ message }}</p>
